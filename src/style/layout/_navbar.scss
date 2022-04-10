@@ -1,0 +1,62 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.2rem 1rem;
+  position: sticky;
+  margin: 20px;
+  @include box-shadow(4px, 24px, 15px, rgba(34, 41, 47, 0.1));
+  ul {
+    list-style-type: none;
+    color: #6e6b7b;
+  }
+  .bookmark {
+    display: flex;
+    justify-content: space-between;
+    min-width: 15%;
+    li {
+      #burger {
+        div {
+          background: #555;
+          width: 25px;
+          height: 3px;
+          margin: 3px;
+          display: none;
+        }
+      }
+    }
+  }
+  // start setting section
+  .setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 27%;
+    .shoping-cart {
+      position: relative;
+      .sub-menu {
+        position: absolute;
+        background: #fff;
+        border: 1px solid #444;
+        padding: 1rem;
+        top: 63px;
+        right: 6px;
+        width: 20rem;
+      }
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    img {
+      border-radius: 50%;
+      max-width: 30%;
+      min-width: 20%;
+      display: inline-block;
+    }
+  }
+}
+// start setting section

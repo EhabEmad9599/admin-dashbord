@@ -1,0 +1,68 @@
+#filter {
+  color: #444;
+  margin-left: 1.5rem;
+  height: 100%;
+  flex: 1.2;
+  margin-top: 17px;
+  h5 {
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: #5e5873;
+  }
+  .filter-body {
+    background-color: #fff;
+    padding: 1.4rem 2rem;
+    border-radius: 0.3rem;
+    position: relative;
+    @include box-shadow(10px, 10px, 10px, rgba(34, 41, 47, 0.1));
+
+    h5 {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      color: #000;
+      margin-inline-start: 0.7rem;
+      color: #5e5873;
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  // start custome-range section
+  .custom-range {
+    input[type="range"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      width: 100%;
+      height: 3px;
+      background-color: #ddd;
+      // position: relative;
+      cursor: pointer;
+      border-radius: 1rem;
+    }
+    #slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      background-color: #664aff;
+      cursor: pointer;
+    }
+  }
+
+  .filter-active {
+    transform: translateX(0%) !important;
+    top:0;
+  }
+  #close {
+    position: absolute;
+    right:20px;
+    top:20px;
+    cursor: pointer;
+    display: none;
+  }
+}
