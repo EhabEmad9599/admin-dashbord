@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./components/sidebar";
 import "./style/style.scss";
 import Home from "./components/home";
+import Setting from "./components/setting";
 
 
 const App = () => {
@@ -16,6 +17,8 @@ const App = () => {
     <article className="container">
       <Sidebar slideStatus={slideStatus} toggleSlide={toggleSlide} setToggleSlide={setToggleSlide} />
       <Home slideStatus={slideStatus} toggleSlide={toggleSlide} setToggleSlide={setToggleSlide}  />
+      <Setting/>
+
     </article>
   );
 };
