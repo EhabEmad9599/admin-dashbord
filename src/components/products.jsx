@@ -64,9 +64,7 @@ const Products = ({filterToggle}) => {
       {/* start products section */}
       <section className="items">
         {store.products
-          .filter((product) => product.name.toLowerCase().includes(searchTerm))
-          .slice(0, 9)
-          .map((product) => {
+          .filter((product) => product.name.toLowerCase().includes(searchTerm)).slice(0, 9).map((product) => {
             return (
               <section key={product.id} className="item">
                 <div className="image">

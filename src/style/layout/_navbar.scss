@@ -6,6 +6,9 @@ nav {
   padding: .2rem 1rem;
   position: sticky;
   margin: 20px;
+  position: sticky;
+  top:20px;
+  z-index: 3;
   @include box-shadow(4px, 24px, 15px, rgba(34, 41, 47, 0.1));
   ul {
     list-style-type: none;
@@ -50,6 +53,39 @@ nav {
       align-items: center;
       flex-direction: row;
       justify-content: space-evenly;
+      position: relative;
+      cursor: pointer;
+      .submenu {
+        border-radius: 5px;
+        position: absolute;
+        top: 55px;
+        width: 10rem;
+        background-color: #FFF;
+        display: none;
+
+        li {
+          line-height: 2.9;
+          display: flex;
+          align-items: center;
+          font-size: .85rem;
+          padding-left:20px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(115,103,240,.12);
+          }
+          span {
+            font-size: 1rem;
+            margin-right:6px;
+          }
+          a {
+            text-decoration: none;
+          }
+        }
+        .line {
+          border: 1px solid rgba(34,41,47,.08);
+          height: 1px;
+        }
+      }
     }
     img {
       border-radius: 50%;
@@ -58,5 +94,10 @@ nav {
       display: inline-block;
     }
   }
+  .active {
+    display: block !important;
+    transition: all ease-in-out .5s;
+  }
 }
+
 // start setting section
