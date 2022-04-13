@@ -1,16 +1,17 @@
 import React from "react";
 import { prices, categories, brands } from "../filterData";
 
-const Filter = ({filterStatus, filterToggle}) => {
+const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
   return (
     <>
       <article className={filterStatus ? "active-filter" : ""} id="filter">
-        <h5>Filters</h5>
+
+        <h4>Filters</h4>
         <section className="filter-body">
           {/* Multi Range section */}
           <h5>Multi Range </h5>
           <div onClick={filterToggle} id="close">
-          <span className="material-icons">close</span>
+            <span className="material-icons">close</span>
           </div>
           {prices.map((price, index) => (
             <div className="multi-range-price" key={index}>
@@ -38,11 +39,65 @@ const Filter = ({filterStatus, filterToggle}) => {
           <h5>Brands</h5>
           {brands.map((brand, index) => (
             <div className="categorie" key={index}>
-              <input type="radio" name="brand" value={brand} />
+              <input
+                onClick={() => onItemSelect(brand)}
+                type="radio"
+                name="brand"
+                value={brand}
+              />
               <label>{brand}</label>
             </div>
           ))}
 
+          {/* start Rating */}
+          <section className="rating">
+            <div className="rating-star">
+              <span className="material-icons checked">star</span>
+              <span className="material-icons checked">star</span>
+              <span className="material-icons checked">star</span>
+              <span className="material-icons checked">star</span>
+              <span className="material-icons">star</span>
+            </div>
+            <div className="stars-received">
+              <span>160</span>
+            </div>
+          </section>
+          <section className="rating">
+            <div className="rating-star">
+              <span className="material-icons checked">star</span>
+              <span className="material-icons checked">star</span>
+              <span className="material-icons checked">star</span>
+              <span className="material-icons">star</span>
+              <span className="material-icons">star</span>
+            </div>
+            <div className="stars-received">
+              <span>176</span>
+            </div>
+          </section>
+          <section className="rating">
+            <div className="rating-star">
+              <span className="material-icons checked">star</span>
+              <span className="material-icons checked">star</span>
+              <span className="material-icons">star</span>
+              <span className="material-icons">star</span>
+              <span className="material-icons">star</span>
+            </div>
+            <div className="stars-received">
+              <span>291</span>
+            </div>
+          </section>
+          <section className="rating">
+            <div className="rating-star">
+              <span className="material-icons checked">star</span>
+              <span className="material-icons">star</span>
+              <span className="material-icons">star</span>
+              <span className="material-icons">star</span>
+              <span className="material-icons">star</span>
+            </div>
+            <div className="stars-received">
+              <span>190</span>
+            </div>
+          </section>
         </section>
       </article>
     </>

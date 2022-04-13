@@ -3,11 +3,10 @@ import profile from "../img/profile.png";
 
 const Navbar = ({ slideStatus }) => {
 
-  const [submenu, setSubmenu] = useState(false);
+  const [userSubMenu, setUserSubMenu] = useState(false);
 
-  const toggleSubmenu = () => {
-    setSubmenu(!submenu);
-    console.log(submenu);
+  const toggleSubMenu = () => {
+    setUserSubMenu(!userSubMenu);
   }
   return (
     <>
@@ -55,13 +54,13 @@ const Navbar = ({ slideStatus }) => {
           <li>
             <span className="material-icons">notifications_none</span>
           </li>
-          <li onClick={toggleSubmenu} className="user">
+          <li onClick={toggleSubMenu} className="user">
             <div className="info">
               <h5>Ehab Emad</h5>
               <span>admin</span>
             </div>
             <img src={profile} alt="profileImg" />
-            <ul className={submenu ? 'submenu active' : 'submenu'}>
+            <ul className={userSubMenu ? 'submenu active' : 'submenu'}>
               <li> <span className="material-icons">person</span>Profile</li>
               <li>
                 <span className="material-icons icon">mail_outline</span>

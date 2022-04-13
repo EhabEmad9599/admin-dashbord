@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import store from "../store-demo-data.json";
 
-
-
-const Products = ({filterToggle}) => {
-  // create a state for switch filter button
-
+const Products = ({ filterToggle, allProducts }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -20,7 +15,7 @@ const Products = ({filterToggle}) => {
             <div className="line3"></div>
           </div>
           {/* end .burger-menu */}
-          <h5>{store.products.length} result found</h5>
+          <h5>{allProducts.length} result found</h5>
         </div>
 
         <div className="custom-select">
@@ -63,8 +58,10 @@ const Products = ({filterToggle}) => {
 
       {/* start products section */}
       <section className="items">
-        {store.products
-          .filter((product) => product.name.toLowerCase().includes(searchTerm)).slice(0, 9).map((product) => {
+        {allProducts
+          .filter((product) => product.name.toLowerCase().includes(searchTerm))
+          .slice(0, 9)
+          .map((product) => {
             return (
               <section key={product.id} className="item">
                 <div className="image">

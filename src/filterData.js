@@ -30,14 +30,23 @@ export const categories = [
 ];
 
 export const brands = [
-  'Insignia™',
-  'Samsung',
-  'Metra',
-  'HP',
-  'Apple',
-  'GE',
+  'TAS',
+  '3M',
+  'Vankyo Store',
+  'apple',
+  'Nike',
   'Sony',
-  'Incipio',
-  'KitchenAid',
-  'Whirlpool'
+  'google',
+  'Philips',
+  'Logitech',
+  'Adidas',
+  'Oculus',
+  'Hobo',
+  'Bugani',
+  'Toshiba',
+  'Tile',
+  'Ronyes',
+  'Willful',
+  'VicTsing',
+  'Bose',
 ]
