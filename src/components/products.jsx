@@ -3,6 +3,11 @@ import React, { useState } from "react";
 const Products = ({ filterToggle, allProducts }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
+
+  // Start sort function
+
+  // End sort function
+
   return (
     <article className="products">
       {/* start ecommerce-header */}
@@ -26,7 +31,7 @@ const Products = ({ filterToggle, allProducts }) => {
             <option id="bg-hover" value="Lowest">
               Lowest
             </option>
-            <option id="bg-hover" value="Highest">
+            <option  id="bg-hover" value="Highest">
               Highest
             </option>
           </select>

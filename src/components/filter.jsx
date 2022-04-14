@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { prices, categories, brands } from "../filterData";
 
 const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
+  const [rangeValue, setRangeValue] = useState(0);
+
   return (
     <>
       <article className={filterStatus ? "active-filter" : ""} id="filter">
@@ -21,11 +23,10 @@ const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
           ))}
 
           {/* custome range input */}
+          <h5> Price Range </h5>
           <div className="custom-range">
-            <input type="range" min="0" max="100" id="slider" />
-            <div id="selector">
-              <div className="select-btn"></div>
-            </div>
+            <input onChange={(e) => setRangeValue(e.target.value)} value={rangeValue} type="range" min="0" max="100" id="slider" />
+            <span id="rangeValue">{rangeValue}</span>
           </div>
           {/* Categories section */}
           <h5>Categories</h5>
@@ -48,7 +49,6 @@ const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
               <label>{brand}</label>
             </div>
           ))}
-
           {/* start Rating */}
           <section className="rating">
             <div className="rating-star">
