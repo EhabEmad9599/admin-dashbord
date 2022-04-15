@@ -5,7 +5,6 @@ const Setting = () => {
 
   const toggle = () => {
     setToggleSetting(!toggleSetting);
-    console.log(toggleSetting);
   }
   return (  
     <>

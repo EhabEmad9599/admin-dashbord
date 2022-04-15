@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 
-const Products = ({ filterToggle, allProducts }) => {
+const Products = ({ filterToggle, allProducts, handleSort }) => {
   const [searchTerm, setSearchTerm] = useState("");
-
-
-  // Start sort function
-
-  // End sort function
 
   return (
     <article className="products">
@@ -24,14 +19,14 @@ const Products = ({ filterToggle, allProducts }) => {
         </div>
 
         <div className="custom-select">
-          <select>
-            <option id="bg-hover" value="Featured">
+          <select onChange={(e) => handleSort(e.target.value)}>
+            <option id="bg-hover" value="featured">
               Featured
             </option>
-            <option id="bg-hover" value="Lowest">
+            <option id="bg-hover" value="lowest">
               Lowest
             </option>
-            <option  id="bg-hover" value="Highest">
+            <option id="bg-hover" value="highest">
               Highest
             </option>
           </select>
