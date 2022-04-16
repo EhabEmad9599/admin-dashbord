@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GoTopButton from "./common/goTopButton";
 
 const Products = ({ filterToggle, allProducts, handleSort }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -109,6 +110,10 @@ const Products = ({ filterToggle, allProducts, handleSort }) => {
         </ul>
       </section>
       {/* End Pagination */}
+
+      {/* start Scroll to Top Button */}
+      <GoTopButton/>
+      {/* End Scroll to Top Button */}
     </article>
   );
 };

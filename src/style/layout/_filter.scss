@@ -4,8 +4,8 @@
   height: 100%;
   flex: 1.2;
   margin-top: 17px;
-  h5 {
-    margin: 15px 0;
+  h4 {
+    margin-bottom: 1rem;
     font-weight: 800;
     color: #5e5873;
   }
@@ -16,7 +16,7 @@
     position: relative;
     @include box-shadow(10px, 10px, 10px, rgba(34, 41, 47, 0.1));
 
-    h4 {
+    h5 {
       margin-bottom: 1.2rem;
     }
     input[type="radio"] {

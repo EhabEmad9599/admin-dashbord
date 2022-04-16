@@ -9,9 +9,7 @@ const Setting = () => {
   return (  
     <>
       <article className={toggleSetting ? 'customizer open': 'customizer'}>
-        <div onClick={toggle} className="customizer-toggle">
-        <span className="material-icons">settings</span>
-        </div>
+
         <section className="customizer-title">
           <h4>Theme Customizer </h4>
           <span>Customize &amp; Preview in Real Time</span>
@@ -111,6 +109,9 @@ const Setting = () => {
             </div>
         </section>
         {/* end Footer  layout */}
+        <div onClick={toggle} className="customizer-toggle">
+        <span className="material-icons">settings</span>
+        </div>
       </article>
     </>
   );
