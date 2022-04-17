@@ -1,16 +1,16 @@
 #filter {
-  color: #444;
+  color: var(--pargrahColor);
   margin-left: 1.5rem;
   height: 100%;
   flex: 1.2;
   margin-top: 17px;
   h5 {
-    margin: 15px 0;
+    margin-bottom: 15px;
     font-weight: 800;
-    color: #5e5873;
+    color: var(--headerColor);
   }
   .filter-body {
-    background-color: #fff;
+    background-color: var(--section-bg);
     padding: 1.4rem 2rem;
     border-radius: 0.3rem;
     position: relative;
@@ -27,7 +27,7 @@
     label {
       color: #000;
       margin-inline-start: 0.7rem;
-      color: #5e5873;
+      color: var(--pargrahColor);
       display: inline-block;
       margin-bottom: 0.7rem;
       font-size: 0.75rem;

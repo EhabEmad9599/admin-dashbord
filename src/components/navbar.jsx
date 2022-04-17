@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import profile from "../img/profile.png";
 import avatar from "../img/avatar.png";
 import avatar2 from "../img/avatar-2.png";
@@ -6,7 +6,9 @@ import avatar2 from "../img/avatar-2.png";
 const Navbar = ({ slideStatus }) => {
   const [userSubMenu, setUserSubMenu] = useState(false);
   const [NotificationsSubMenu, setNotificationsSubMenu] = useState(false);
+  const [darkMood, setDarkMood] = useState(false);
 
+  // start toggle user submenu
   const toggleUserSubMenu = () => {
     setUserSubMenu(!userSubMenu);
     if (NotificationsSubMenu === true) {
@@ -15,6 +17,9 @@ const Navbar = ({ slideStatus }) => {
       return setNotificationsSubMenu(false);
     }
   };
+  // start toggle user submenu
+
+  // start toggle notification submenu
 
   const showNotifications = () => {
     setNotificationsSubMenu(!NotificationsSubMenu);
@@ -24,6 +29,34 @@ const Navbar = ({ slideStatus }) => {
       return setUserSubMenu(false);
     }
   };
+  // start toggle notification submenu
+
+  // start toggle dark mode Toggle
+
+  // let theme = localStorage.getItem('theme');
+  // if (theme === 'dark') {enableDarkMood();}
+  const darkModeToggle = () => {
+    // theme = localStorage.getItem('theme');
+    if(darkMood === true) {
+      disableDarkMood()
+    } else {
+      enableDarkMood()
+
+    }
+  }
+
+  function enableDarkMood() {
+    setDarkMood(!darkMood); // this line to change the icon
+    localStorage.setItem('theme', 'dark');
+    document.body.classList.add('dark-mode');
+  }
+  function disableDarkMood() {
+    setDarkMood(!darkMood);
+    localStorage.setItem('theme', 'light');
+    document.body.classList.remove('dark-mode');
+  }
+  // End toggle dark mode Toggle
+
   return (
     <>
       <nav>
@@ -58,8 +91,8 @@ const Navbar = ({ slideStatus }) => {
             <span className="material-icons">language</span>
             {/* English */}
           </li>
-          <li>
-            <span className="material-icons icon">dark_mode</span>
+          <li onClick={darkModeToggle}>
+            <span className="material-icons icon darkMood ">{darkMood ? 'light_mode' : 'dark_mode'}</span>
           </li>
           <li>
             <span className="material-icons">search</span>

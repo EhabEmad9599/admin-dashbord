@@ -7,9 +7,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.7rem;
+    h5 {
+      color:var(--headerColor);
+    }
     #burger {
       div {
-        background: #555;
+        background: var(--pargrahColor);
         width: 25px;
         height: 3px;
         margin: 3px;
@@ -24,10 +27,10 @@
       border-radius: 5px;
       padding:10px;
       font-size:1rem;
-      color:#7367f0;
+      color:var(--primary-btn-fg);
       option {
         border:none;
-        background-color: #FFF;
+        background-color: var(--section-bg);
       }
     }
     .item-view {
@@ -38,7 +41,7 @@
       button {
       padding:.6rem 1.1rem;
       border:none;
-      background-color: #FFF;
+      background-color: transparent;
       border-radius: 7px;
       cursor: pointer;
       &:first-child {
@@ -72,12 +75,14 @@
       font-size: 0.9rem;
       padding: 1.3rem 0.5rem;
       border-radius: 2px;
+      color:var(--pargrahColor);
       outline: none;
       border: none;
+      background-color: var(--section-bg);
       @include box-shadow(0, 4px, 24px, rgba(34, 41, 47, 0.1));
     }
     button {
-      background: #fff;
+      background: var(--section-bg);
       border: none;
       padding: 0.5rem;
       height: 40px;
@@ -88,14 +93,14 @@
     }
   }
   // End search section
-  // // Start products section
+  // Start products section
   .items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 0fr);
     gap: 10px 20px;
     .item {
-      background-color: #fff;
+      background-color: var(--section-bg);
       border-radius: 8px;
       margin-top: 15px;
       transition: .5s;
@@ -119,9 +124,13 @@
       align-items: center;
       margin: 0rem 1rem;
       flex-wrap: wrap;
+      h5 {
+        color: var(--headerColor);
+      }
       span {
         color: gold;
         font-size: 0.9rem;
+        margin-bottom: .8rem;
       }
     }
     .item-info {
@@ -132,6 +141,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         font-weight: 600;
+        color: var(--headerColor);
         &:hover {
           color:#7367f0;
         }
@@ -142,7 +152,8 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-
+        color: var(--pargrahColor);
+        margin:5px 0 13px;
       }
     }
     .item-options {
@@ -166,8 +177,8 @@
       height: 40px;
     }
     .wishlist {
-      background-color: #fff;
-      color: #000;
+      background-color: var(--secondary-btn-fg);
+      color:var(--pargrahColor) ;
       .bg-hover {
         font-size: 1rem;
         padding-right:.6rem;

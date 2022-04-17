@@ -11,16 +11,16 @@
     .content-header-left {
       display: flex;
       h3 {
-        color: #6e6b7b;
+        color: var(--headerColor);
       }
       ul {
         li {
           display: inline-block;
           margin-left: 1rem;
-          color: #fff;
           font-size: 0.8rem;
           a {
             text-decoration: none;
+            color: var(--pargrahColor);
           }
         }
       }

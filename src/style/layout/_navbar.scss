@@ -2,7 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--section-bg);
   padding: .2rem 1rem;
   position: sticky;
   margin: 20px;
@@ -12,7 +12,7 @@ nav {
   @include box-shadow(4px, 24px, 15px, rgba(34, 41, 47, 0.1));
   ul {
     list-style-type: none;
-    color: #6e6b7b;
+    color: var(--pargrahColor);
   }
   .bookmark {
     display: flex;
@@ -21,7 +21,7 @@ nav {
     li {
       #burger {
         div {
-          background: #555;
+          background: var(--pargrahColor);
           width: 25px;
           height: 3px;
           margin: 3px;
@@ -36,6 +36,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     min-width: 29%;
+    .darkMood {
+      cursor: pointer;
+    }
 
     .alert {
       position: relative;
@@ -57,7 +60,7 @@ nav {
         font-weight: bold;
       }
       .drop-down-menu {
-        background-color: #FFF;
+        background-color: var(--section-bg);
         position: absolute;
         top: 47px;
         right: 0px;
@@ -148,7 +151,7 @@ nav {
         position: absolute;
         top: 55px;
         width: 10rem;
-        background-color: #FFF;
+        background-color: var(--section-bg);
         display: none;
 
         li {
@@ -167,6 +170,8 @@ nav {
           }
           a {
             text-decoration: none;
+            color: var(--pargrahColor);
+
           }
         }
         .line {

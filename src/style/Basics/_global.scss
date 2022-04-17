@@ -6,9 +6,27 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #f8f8f8;
+  background-color: var(--primary-bg);
   font-family: "Montserrat", sans-serif;
 }
 .container {
   display: flex;
+}
+
+:root {
+  --primary-bg: #f8f8f8;
+  --pargrahColor: #717481;
+  --headerColor: #a6a4b0;
+  --section-bg: #fff;
+  --primary-btn-fg:#7367f0;
+  --secondary-btn-fg:##fff;
+}
+
+.dark-mode {
+  --primary-bg: #161D31;
+  --pargrahColor: #d0d2d6;
+  --headerColor: #a5acbd;
+  --section-bg: #283046;
+  --primary-btn-fg:#7367f0;
+  --secondary-btn-fg:#161d31 ;
 }

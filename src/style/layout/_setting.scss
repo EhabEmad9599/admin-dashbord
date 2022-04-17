@@ -1,8 +1,5 @@
-:root {
-  --header-color: #5e5873;
-}
 .customizer {
-  background: #fff;
+  background: var(--section-bg);
   width: 400px;
   padding: 1.5rem 1rem;
   box-shadow: 0 15px 30px 0 rgba(34, 41, 47, 0.11), 0 5px 15px 0 rgba(34, 41, 47, 0.08);
@@ -39,18 +36,18 @@
     border-bottom: 1px solid #ebe9f1;
     h4 {
       font-size: 1.286rem;
-      color: var(--header-color);
+      color: var(--headerColor);
     }
     span {
       font-size: 0.7rem;
       font-weight: bold;
-      color: #6e6b7b;
+      color: var(--pargrahColor);
     }
   }
   .customizer-layout {
     border-bottom: 1px solid #ebe9f1;
     h4 {
-      color: var(--header-color);
+      color: var(--headerColor);
       margin: 20px 0 15px 0;
     }
     input {
@@ -60,6 +57,7 @@
     label {
       font-size: 0.9rem;
       margin: 0 10px;
+      color: var(--pargrahColor);
     }
     .form-row {
       margin-top: 1.2rem;
@@ -91,7 +89,7 @@
   .menu-layout {
     border-bottom: 1px solid #ebe9f1;
     h4 {
-      color: var(--header-color);
+      color: var(--headerColor);
       margin: 20px 0 15px 0;
     }
     input {
@@ -101,6 +99,7 @@
     label {
       font-size: 0.9rem;
       margin: 0 10px;
+      color: var(--pargrahColor);
     }
     .menu-visibilty {
       display: flex;
@@ -109,7 +108,7 @@
       margin-top: 1rem;
 
       h5 {
-        color: var(--header-color);
+        color: var(--headerColor);
         margin: 10px 0;
       }
     }
@@ -119,7 +118,7 @@
     // start navbar layout section
   .customizer-navbar {
     h5 {
-      color: var(--header-color);
+      color: var(--headerColor);
       margin-top: 2rem;
     }
     .box-colors {
@@ -162,6 +161,7 @@
   .navbar-type {
     h5 {
       padding-top:1rem;
+      color: var(--headerColor);
     }
     display: flex;
     justify-content: space-between;
@@ -173,6 +173,7 @@
     }
     label {
       font-size: 0.9rem;
+      color: var(--pargrahColor);
     }
   }
     // End navbar layout section
@@ -180,6 +181,7 @@
   .customizer-footer {
     h5 {
       padding-top:1rem;
+      color: var(--headerColor);
     }
   }
 }
