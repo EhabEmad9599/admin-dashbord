@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import profile from "../img/profile.png";
+import avatar from "../img/avatar.png";
+import avatar2 from "../img/avatar-2.png";
 
 const Navbar = ({ slideStatus }) => {
-
   const [userSubMenu, setUserSubMenu] = useState(false);
+  const [NotificationsSubMenu, setNotificationsSubMenu] = useState(false);
 
-  const toggleSubMenu = () => {
+  const toggleUserSubMenu = () => {
     setUserSubMenu(!userSubMenu);
-  }
+    if (NotificationsSubMenu === true) {
+      return setNotificationsSubMenu(false);
+    } else {
+      return setNotificationsSubMenu(false);
+    }
+  };
+
+  const showNotifications = () => {
+    setNotificationsSubMenu(!NotificationsSubMenu);
+    if (userSubMenu === true) {
+      return setUserSubMenu(false);
+    } else {
+      return setUserSubMenu(false);
+    }
+  };
   return (
     <>
       <nav>
@@ -51,17 +67,114 @@ const Navbar = ({ slideStatus }) => {
           <li className="shoping-cart">
             <span className="material-icons">shopping_cart</span>
           </li>
-          <li>
+          <li onClick={showNotifications} className="alert">
             <span className="material-icons">notifications_none</span>
+            <span className="badge">6</span>
+            <ul
+              className={
+                NotificationsSubMenu ? "drop-down-menu show" : "drop-down-menu"
+              }
+            >
+              <li>
+                <div className="title">
+                  <h4>Notifications</h4>
+                  <p className="drop-down-badge">6 new</p>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="avatar-img">
+                    <img src={avatar} alt="avatar" />
+                  </div>
+                  <div className="media-content">
+                    <h5> Congratulation Sam 🎉 </h5>
+                    <span>Won the monthly best seller badge</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="avatar-img">
+                    <img src={avatar2} alt="avatar" />
+                  </div>
+                  <div className="media-content">
+                    <h5> New message received </h5>
+                    <span>You have 10 unread messages</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="avatar-img">
+                    <p>MD</p>
+                  </div>
+                  <div className="media-content">
+                    <h5>Revised Order 👋</h5>
+                    <span>MD Inc. order updated</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="media-content">
+                    <h5> System Notifications </h5>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="avatar-img">
+                    <p>X</p>
+                  </div>
+                  <div className="media-content">
+                    <h5> Server down </h5>
+                    <span>USA Server is down due to hight CPU usage</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="avatar-img">
+                    <p>
+                      <span className="material-icons">done</span>
+                    </p>
+                  </div>
+                  <div className="media-content">
+                    <h5> Sales report generated </h5>
+                    <span>Last month sales report generated</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="media">
+                  <div className="avatar-img">
+                    <p>
+                      <span className="material-icons">warning_amber</span>
+                    </p>
+                  </div>
+                  <div className="media-content">
+                    <h5> High memory usage </h5>
+                    <span>BLR Server using high memory</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <input type="button" value="Read all notifications" />
+              </li>
+            </ul>
           </li>
-          <li onClick={toggleSubMenu} className="user">
+
+          <li onClick={toggleUserSubMenu} className="user">
             <div className="info">
               <h5>Ehab Emad</h5>
               <span>admin</span>
             </div>
             <img src={profile} alt="profileImg" />
-            <ul className={userSubMenu ? 'submenu active' : 'submenu'}>
-              <li> <span className="material-icons">person</span>Profile</li>
+            <ul className={userSubMenu ? "submenu active" : "submenu"}>
+              <li>
+                {" "}
+                <span className="material-icons">person</span>Profile
+              </li>
               <li>
                 <span className="material-icons icon">mail_outline</span>
                 <a href="/">inbox</a>
@@ -83,11 +196,14 @@ const Navbar = ({ slideStatus }) => {
                 <span className="material-icons">credit_card</span>
                 <a href="/">Pricing</a>
               </li>
-              <li> <span className="material-icons">help</span>
-              <a href="/">FAQ</a>
+              <li>
+                {" "}
+                <span className="material-icons">help</span>
+                <a href="/">FAQ</a>
               </li>
-              <li><span className="material-icons">logout</span>
-              <a href="/">Logout</a>
+              <li>
+                <span className="material-icons">logout</span>
+                <a href="/">Logout</a>
               </li>
             </ul>
           </li>
