@@ -30,10 +30,9 @@ export const sidebarData = [
     title: "eCommerce",
     icon: <span className="material-icons">shopping_cart</span>,
     subMenu: [
-      'Shop',
-      'Details',
-      'Wishlist',
-      'Checkout'
+      {
+        title:'test',
+      }
     ]
   },
   {

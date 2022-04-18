@@ -26,7 +26,7 @@ const Home = ({ toggleSlide, setToggleSlide, slideStatus }) => {
   };
 
   // start filter function
-  const fillterd = brand ? products.filter((item) => item.brand === brand) : products;
+  const fillterd = brand  ? products.filter((item) => item.brand === brand) : products;
   // End filter function
 
   // Start sort function

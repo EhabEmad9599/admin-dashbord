@@ -89,7 +89,6 @@ const Navbar = ({ slideStatus }) => {
         <ul className="setting">
           <li>
             <span className="material-icons">language</span>
-            {/* English */}
           </li>
           <li onClick={darkModeToggle}>
             <span className="material-icons icon darkMood ">{darkMood ? 'light_mode' : 'dark_mode'}</span>

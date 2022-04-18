@@ -28,7 +28,29 @@
     height: auto;
   }
 }
-
+@media (max-width: 767.98px) {  
+nav {
+  .setting {
+    .alert {
+      .drop-down-menu {
+        right:-72px;
+      }
+    }
+  }
+}
+}
+@media (max-width: 575.98px) { 
+  nav {
+    .setting {
+      .alert {
+        .drop-down-menu {
+          min-width: 344px;
+          right: -116px;
+        }
+      }
+    }
+  }
+}
   // End navbar responsive section
 
 
