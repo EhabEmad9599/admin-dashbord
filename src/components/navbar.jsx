@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import profile from "../img/profile.png";
 import avatar from "../img/avatar.png";
 import avatar2 from "../img/avatar-2.png";
@@ -33,10 +33,12 @@ const Navbar = ({ slideStatus }) => {
 
   // start toggle dark mode Toggle
 
-  // let theme = localStorage.getItem('theme');
-  // if (theme === 'dark') {enableDarkMood();}
+  let theme = localStorage.getItem('theme');
+  useEffect(() => {
+  if (theme === 'dark') {enableDarkMood();}
+  },[])
   const darkModeToggle = () => {
-    // theme = localStorage.getItem('theme');
+    theme = localStorage.getItem('theme');
     if(darkMood === true) {
       disableDarkMood()
     } else {
