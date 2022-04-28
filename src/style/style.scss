@@ -3,14 +3,13 @@
 
 //Helpers
 @import "./Helpers/mixin";
-@import "./Helpers/Variables";
 
 // layout
-@import "./layout/sidebar";
-@import "./layout/navbar";
-@import "./layout/filter";
+@import "../components/sidebar/sidebar";
+@import "../components/navbar/navbar";
+@import "../components/filter/filter";
 @import "./layout/home";
-@import "./layout/products";
-@import "./layout/setting";
+@import "../components//products/products";
+@import "../components/setting/setting";
 
 @import "./media.scss";

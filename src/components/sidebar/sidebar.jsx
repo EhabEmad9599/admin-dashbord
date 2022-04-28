@@ -1,6 +1,6 @@
 import React from "react";
-import logo from '../img/logo.svg';
-import { sidebarData } from "../sidebarData";
+import logo from '../../img/logo.svg';
+import { sidebarData } from "../../sidebarData";
 
 const Sidebar = ({ toggleSlide, slideStatus }) => {
   return (

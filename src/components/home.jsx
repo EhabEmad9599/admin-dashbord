@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import store from "../store-demo-data.json";
-import Filter from "./filter";
-import Products from "./products";
-import Navbar from "./navbar";
+import Filter from "./filter/filter";
+import Products from "./products/products";
+import Navbar from "./navbar/navbar";
 
 const Home = ({ toggleSlide, setToggleSlide, slideStatus }) => {
   const [filterStatus, setFilterStatus] = useState(false);

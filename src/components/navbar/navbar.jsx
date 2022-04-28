@@ -1,7 +1,7 @@
-import React, {  useEffect, useState } from "react";
-import profile from "../img/profile.png";
-import avatar from "../img/avatar.png";
-import avatar2 from "../img/avatar-2.png";
+import React, { useEffect, useState } from "react";
+import profile from "../../img/profile.png";
+import avatar from "../../img/avatar.png";
+import avatar2 from "../../img/avatar-2.png";
 
 const Navbar = ({ slideStatus }) => {
   const [userSubMenu, setUserSubMenu] = useState(false);
@@ -33,29 +33,30 @@ const Navbar = ({ slideStatus }) => {
 
   // start toggle dark mode Toggle
 
-  let theme = localStorage.getItem('theme');
+  let theme = localStorage.getItem("theme");
   useEffect(() => {
-  if (theme === 'dark') {enableDarkMood();}
-  },[])
-  const darkModeToggle = () => {
-    theme = localStorage.getItem('theme');
-    if(darkMood === true) {
-      disableDarkMood()
-    } else {
-      enableDarkMood()
-
+    if (theme === "dark") {
+      enableDarkMood();
     }
-  }
+  }, []);
+  const darkModeToggle = () => {
+    theme = localStorage.getItem("theme");
+    if (darkMood === true) {
+      disableDarkMood();
+    } else {
+      enableDarkMood();
+    }
+  };
 
   function enableDarkMood() {
     setDarkMood(!darkMood); // this line to change the icon
-    localStorage.setItem('theme', 'dark');
-    document.body.classList.add('dark-mode');
+    localStorage.setItem("theme", "dark");
+    document.body.classList.add("dark-mode");
   }
   function disableDarkMood() {
     setDarkMood(!darkMood);
-    localStorage.setItem('theme', 'light');
-    document.body.classList.remove('dark-mode');
+    localStorage.setItem("theme", "light");
+    document.body.classList.remove("dark-mode");
   }
   // End toggle dark mode Toggle
 
@@ -93,7 +94,9 @@ const Navbar = ({ slideStatus }) => {
             <span className="material-icons">language</span>
           </li>
           <li onClick={darkModeToggle}>
-            <span className="material-icons icon darkMood ">{darkMood ? 'light_mode' : 'dark_mode'}</span>
+            <span className="material-icons icon darkMood ">
+              {darkMood ? "light_mode" : "dark_mode"}
+            </span>
           </li>
           <li>
             <span className="material-icons">search</span>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/sidebar/sidebar";
 import "./style/style.scss";
 import Home from "./components/home";
-import Setting from "./components/setting";
+import Setting from "./components/setting/setting";
 
 
 const App = () => {

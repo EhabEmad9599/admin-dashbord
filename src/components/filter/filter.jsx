@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { prices, categories, brands } from "../filterData";
+import { prices, categories, brands } from "../../filterData";
 
 const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
   const [rangeValue, setRangeValue] = useState(0);
