@@ -1,3 +1,10 @@
+
+## Features
+- Search Products by Title Name 🧐
+- Filter Products by Category
+- Sort Products by Price
+
+
 # Installing
 to get the project running, follow these steps:
 
