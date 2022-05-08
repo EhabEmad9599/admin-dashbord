@@ -1,5 +1,4 @@
 import React from "react";
-import logo from '../../img/logo.svg';
 import { sidebarData } from "../../sidebarData";
 
 const Sidebar = ({ toggleSlide, slideStatus }) => {
@@ -7,10 +6,9 @@ const Sidebar = ({ toggleSlide, slideStatus }) => {
     <>
       <section className={toggleSlide ? "active" : ""} id="sidebar">
         <div className="logo">
-        <img src={logo} alt="logo" />
-        <h2>Vuexy</h2>
+          <h2>Dashbord</h2>
           <div onClick={slideStatus} id="close">
-          <span className="material-icons">close</span>
+            <span className="material-icons">close</span>
           </div>
         </div>
         <ul className="main-menu">
@@ -24,7 +22,6 @@ const Sidebar = ({ toggleSlide, slideStatus }) => {
             </li>
           ))}
         </ul>
-
       </section>
     </>
   );
