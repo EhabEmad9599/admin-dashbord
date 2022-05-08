@@ -1,7 +1,7 @@
 
 ## Features
 - Search Products by Title Name 🧐
-- Filter Products by Price or Category
+- Filter Products by Category
 - Sort Products by Price
 
 
