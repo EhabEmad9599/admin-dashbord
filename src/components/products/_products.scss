@@ -104,6 +104,7 @@
       border-radius: 8px;
       margin-top: 15px;
       transition: .5s;
+      min-width: 200px;
       cursor: pointer;
       @include box-shadow(0, 4px, 24px, rgba(34, 41, 47, 0.1));
       &:hover {
