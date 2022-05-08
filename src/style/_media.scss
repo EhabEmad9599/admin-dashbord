@@ -1,13 +1,14 @@
 @media (max-width: 1200px) {
   // start slider responsive section
   #sidebar {
-    position: absolute;
+    position: fixed;
     left: 0px;
     transform: translateX(-100%);
     transition: .5s;
     width:225px;
     z-index: 999;
-    height: auto;
+    height: 100vh;
+    overflow: scroll;
     #close {
       display: block !important;
     }

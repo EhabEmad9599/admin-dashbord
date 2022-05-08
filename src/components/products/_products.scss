@@ -104,7 +104,7 @@
       border-radius: 8px;
       margin-top: 15px;
       transition: .5s;
-      min-width: 200px;
+      min-width: 234px;
       cursor: pointer;
       @include box-shadow(0, 4px, 24px, rgba(34, 41, 47, 0.1));
       &:hover {
@@ -137,7 +137,6 @@
     .item-info {
       margin: 0rem 1rem;
       h5 {
-        width: 250px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -149,7 +148,6 @@
 
       }
       p {
-        width: 250px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
