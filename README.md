@@ -5,7 +5,7 @@
 - Search Products by Title Name 🧐
 - Filter Products by Category
 - Sort Products by Price
-- Choose between light and dark mode 🌝🌚
+- Choose between light and dark mode ☀️🌘
 - Maintain the selected theme after refreshing the browser 
 - View the optimal layout depending on your device's screen size 🖥💻📱
 
