@@ -9,7 +9,8 @@
 @import "../components/navbar/navbar";
 @import "../components/filter/filter";
 @import "./layout/home";
-@import "../components//products/products";
+@import "../components/products/products";
+@import "../components/productDetails/productDetails.scss";
 @import "../components/setting/setting";
 
 @import "./media.scss";

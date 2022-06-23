@@ -1,7 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Pagination from "../common/pagination";
 
-const Products = ({ filterToggle, allProducts, handleSort }) => {
+const Products = ({
+  filterToggle,
+  allProducts,
+  handleSort,
+  productDetailsHandler,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [pageSize, setPageSize] = useState(4);
+
+  const handlePageChange = (page) => {
+    console.log(page);
+  };
 
   return (
     <article className="products">
@@ -63,7 +75,12 @@ const Products = ({ filterToggle, allProducts, handleSort }) => {
           .slice(0, 9)
           .map((product) => {
             return (
-              <section key={product.id} className="item">
+              <Link
+                to={`/productDetails/${product.id}`}
+                onClick={() => productDetailsHandler(product)}
+                key={product.id}
+                className="item"
+              >
                 <div className="image">
                   <img src={product.img} alt={product.name} />
                 </div>
@@ -83,31 +100,28 @@ const Products = ({ filterToggle, allProducts, handleSort }) => {
                   <p>{product.discription}</p>
                 </div>
                 <div className="item-options">
-                  <a className="wishlist" href="/">
+                  {/* <a className="wishlist" href="/">
                     <span className="material-icons bg-hover">favorite</span>
                     WishList
                   </a>
                   <a className="add-to-cart" href="/">
                     <span className="material-icons">shopping_cart</span>
                     Add to cart
-                  </a>
+                  </a> */}
                 </div>
-              </section>
+              </Link>
             );
           })}
       </section>
       {/* start item section */}
 
       {/* start Pagination */}
-      <section className="Pagination">
-        <ul>
-          <li>&lt;</li>
-          <li className="active">1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>&gt;</li>
-        </ul>
-      </section>
+      <Pagination
+        itemsCount={allProducts.length}
+        pageSize={pageSize}
+        onPageChange={handlePageChange}
+      />
+
       {/* End Pagination */}
     </article>
   );

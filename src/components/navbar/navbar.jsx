@@ -3,7 +3,7 @@ import profile from "../../img/profile.png";
 import avatar from "../../img/avatar.png";
 import avatar2 from "../../img/avatar-2.png";
 
-const Navbar = ({ slideStatus }) => {
+const Navbar = ({ slideStatusHandler }) => {
   const [userSubMenu, setUserSubMenu] = useState(false);
   const [NotificationsSubMenu, setNotificationsSubMenu] = useState(false);
   const [darkMood, setDarkMood] = useState(false);
@@ -66,7 +66,7 @@ const Navbar = ({ slideStatus }) => {
         <ul className="bookmark">
           <li>
             {/* .burger-menu */}
-            <div onClick={slideStatus} id="burger">
+            <div onClick={slideStatusHandler} id="burger">
               <div className="line1"></div>
               <div className="line2"></div>
               <div className="line3"></div>
