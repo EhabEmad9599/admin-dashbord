@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import store from "../store-demo-data.json";
 import Filter from "./filter/filter";
 import Products from "./products/products";
-import Navbar from "./navbar/navbar";
 
-const Home = ({ toggleSlide, setToggleSlide, slideStatus }) => {
+const Home = ({productDetailsHandler}) => {
   const [filterStatus, setFilterStatus] = useState(false);
   const [products, setProducts] = useState([]);
   const [brand, setBrand] = useState();
@@ -26,7 +25,9 @@ const Home = ({ toggleSlide, setToggleSlide, slideStatus }) => {
   };
 
   // start filter function
-  const fillterd = brand  ? products.filter((item) => item.brand === brand) : products;
+  const fillterd = brand
+    ? products.filter((item) => item.brand === brand)
+    : products;
   // End filter function
 
   // Start sort function
@@ -39,24 +40,17 @@ const Home = ({ toggleSlide, setToggleSlide, slideStatus }) => {
     } else if (sortArray === "highest") {
       const sorted = [...fillterd].sort((a, b) => b.price > a.price);
       setProducts(sorted);
-    } else  {
+    } else {
       const sorted = [...fillterd].sort((a, b) => a.id > b.id);
       setProducts(sorted);
-
     }
-  }
-
+  };
 
   // End sort function
 
   return (
     <>
       <article className="home">
-        <Navbar
-          slideStatus={slideStatus}
-          toggleSlide={toggleSlide}
-          setToggleSlide={setToggleSlide}
-        />
         <section className="content-header">
           <div className="content-header-left">
             <h3>Shop |</h3>
@@ -87,6 +81,7 @@ const Home = ({ toggleSlide, setToggleSlide, slideStatus }) => {
             allProducts={fillterd}
             filterToggle={filterToggle}
             onSort={handleSort}
+            productDetailsHandler={productDetailsHandler}
           />
         </div>
       </article>

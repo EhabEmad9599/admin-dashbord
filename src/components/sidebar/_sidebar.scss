@@ -17,11 +17,13 @@
       width: 20%;
       margin-top: 0.3rem;
     }
-    h2 {
+    a {
       color: #7367f0;
       display: inline-block;
       margin-inline-start: 1rem;
       font-size: 1.45rem;
+      text-decoration: none;
+      font-weight:600;
     }
     #close {
       position:absolute;

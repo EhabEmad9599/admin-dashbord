@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { sidebarData } from "../../sidebarData";
 
-const Sidebar = ({ toggleSlide, slideStatus }) => {
+const Sidebar = ({ toggleSlide, slideStatusHandler }) => {
   return (
     <>
       <section className={toggleSlide ? "active" : ""} id="sidebar">
         <div className="logo">
-          <h2>Dashbord</h2>
-          <div onClick={slideStatus} id="close">
+          <Link to="/">Dashbord</Link>
+          <div onClick={slideStatusHandler} id="close">
             <span className="material-icons">close</span>
           </div>
         </div>

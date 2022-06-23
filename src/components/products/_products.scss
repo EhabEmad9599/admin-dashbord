@@ -105,6 +105,8 @@
       margin-top: 15px;
       transition: .5s;
       min-width: 234px;
+      display: block;
+      height: 100%;
       cursor: pointer;
       @include box-shadow(0, 4px, 24px, rgba(34, 41, 47, 0.1));
       &:hover {
