@@ -10,6 +10,12 @@
 - Maintain the selected theme after refreshing the browser 
 - View the optimal layout depending on your device's screen size 🖥💻📱
 
+### Build with
+- React JS
+- React Router
+- Redux
+- Sass
+
 
 # Installing
 to get the project running, follow these steps:
