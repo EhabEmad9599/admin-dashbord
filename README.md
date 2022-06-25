@@ -13,7 +13,6 @@
 ### Build with
 - React JS
 - React Router
-- Redux
 - Sass
 
 
