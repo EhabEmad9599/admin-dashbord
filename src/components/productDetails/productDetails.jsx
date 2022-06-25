@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const ProductDetails = ({ productDetails }) => {
+const ProductDetails = () => {
+  const productDetails = useSelector(
+    (state) => state.productDetails.productDetails
+  );
   return (
     <>
       <article className="product">

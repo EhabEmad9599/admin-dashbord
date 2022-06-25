@@ -1,38 +1,40 @@
-import React, { useState } from 'react';
-
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { uiAction } from "../../Redux/Reducer/uiSlice";
 const Setting = () => {
-  const [toggleSetting, setToggleSetting] = useState(false);
+  const toggleSetting = useSelector((state) => state.ui.setting);
+  const dispatch = useDispatch();
 
-  const toggle = () => {
-    setToggleSetting(!toggleSetting);
-  }
-  return (  
+  const settingHandler = () => {
+    dispatch(uiAction.settingHandler());
+  };
+  return (
     <>
-      <article className={toggleSetting ? 'customizer open': 'customizer'}>
-        <div onClick={toggle} className="customizer-toggle">
-        <span className="material-icons">settings</span>
+      <article className={toggleSetting ? "customizer open" : "customizer"}>
+        <div onClick={settingHandler} className="customizer-toggle">
+          <span className="material-icons">settings</span>
         </div>
         <section className="customizer-title">
           <h4>Theme Customizer </h4>
           <span>Customize &amp; Preview in Real Time</span>
 
-        {/* start customizer-layout section */}
+          {/* start customizer-layout section */}
         </section>
         <section className="customizer-layout">
           <h4>Skin</h4>
-          <input type="radio" name="bg-color"/>
+          <input type="radio" name="bg-color" />
           <label>Light</label>
-          <input type="radio" name="bg-color"/>
+          <input type="radio" name="bg-color" />
           <label>Bordered</label>
-          <input type="radio" name="bg-color"/>
+          <input type="radio" name="bg-color" />
           <label>Dark</label>
-          <input type="radio" name="bg-color"/>
+          <input type="radio" name="bg-color" />
           <label>Semi Dark</label>
 
           <h4>Content Width</h4>
-          <input type="radio" name="content-Width"/>
+          <input type="radio" name="content-Width" />
           <label>Full Width</label>
-          <input type="radio" name="content-Width"/>
+          <input type="radio" name="content-Width" />
           <label>Boxed</label>
 
           <div className="form-row">
@@ -56,11 +58,11 @@ const Setting = () => {
         {/* start Menu Layout section */}
         <section className="menu-layout">
           <h4>Menu Layout</h4>
-          <input type="radio" name='dir' />
+          <input type="radio" name="dir" />
           <label>Vertical</label>
-          <input type="radio" name='dir' />
+          <input type="radio" name="dir" />
           <label>Horizontal</label>
-          <div className='menu-visibilty'>
+          <div className="menu-visibilty">
             <h5>Menu Collapsed</h5>
             <input type="checkbox" />
           </div>
@@ -72,28 +74,28 @@ const Setting = () => {
         {/* End Menu Layout section */}
 
         {/* start navbar layout section */}
-        <section className='customizer-navbar'>
+        <section className="customizer-navbar">
           <h5>Navbar Color</h5>
           <div className="box-colors">
-          <div className="box-color bg-light"></div>
-          <div className="box-color bg-purple"></div>
-          <div className="box-color bg-gray"></div>
-          <div className="box-color bg-grren"></div>
-          <div className="box-color bg-red"></div>
-          <div className="box-color bg-orange"></div>
-          <div className="box-color bg-Blue-light"></div>
-          <div className="box-color bg-dark"></div>
+            <div className="box-color bg-light"></div>
+            <div className="box-color bg-purple"></div>
+            <div className="box-color bg-gray"></div>
+            <div className="box-color bg-grren"></div>
+            <div className="box-color bg-red"></div>
+            <div className="box-color bg-orange"></div>
+            <div className="box-color bg-Blue-light"></div>
+            <div className="box-color bg-dark"></div>
           </div>
           <h5>Navbar Type</h5>
           <div className="navbar-type">
-          <input type="radio" name='nav-type' />
-          <label>Floating</label>
-          <input type="radio" name='nav-type' />
-          <label>Sticky</label>
-          <input type="radio" name='nav-type' />
-          <label>Static</label>
-          <input type="radio" name='nav-type' />
-          <label>Hidden</label>
+            <input type="radio" name="nav-type" />
+            <label>Floating</label>
+            <input type="radio" name="nav-type" />
+            <label>Sticky</label>
+            <input type="radio" name="nav-type" />
+            <label>Static</label>
+            <input type="radio" name="nav-type" />
+            <label>Hidden</label>
           </div>
         </section>
         {/* End navbar layout section */}
@@ -101,19 +103,19 @@ const Setting = () => {
         {/* Start Footer  layout */}
         <section className="customizer-footer">
           <h5>Footer Type</h5>
-            <div className="navbar-type">
-            <input type="radio" name='footer' />
+          <div className="navbar-type">
+            <input type="radio" name="footer" />
             <label>Sticky</label>
-            <input type="radio" name='footer' />
+            <input type="radio" name="footer" />
             <label>Static</label>
-            <input type="radio" name='footer' />
+            <input type="radio" name="footer" />
             <label>Hidden</label>
-            </div>
+          </div>
         </section>
         {/* end Footer  layout */}
       </article>
     </>
   );
-}
+};
 
 export default Setting;

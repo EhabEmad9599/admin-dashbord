@@ -39,6 +39,12 @@ nav {
     .darkMood {
       cursor: pointer;
     }
+    .shoping-cart {
+      a {
+        color:var(--pargrahColor);
+        text-decoration: none;
+      }
+    }
 
     .alert {
       position: relative;

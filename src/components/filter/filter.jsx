@@ -1,18 +1,24 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { prices, categories, brands } from "../../filterData";
+import { uiAction } from "../../Redux/Reducer/uiSlice";
 
-const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
+const Filter = ({ onItemSelect }) => {
   const [rangeValue, setRangeValue] = useState(0);
+  const filterStatus = useSelector((state) => state.ui.filterMenu);
+  const dispatch = useDispatch();
 
+  const filterToggleHandler = () => {
+    dispatch(uiAction.filterMenu());
+  };
   return (
     <>
       <article className={filterStatus ? "active-filter" : ""} id="filter">
-
         <h4>Filters</h4>
         <section className="filter-body">
           {/* Multi Range section */}
           <h5>Multi Range </h5>
-          <div onClick={filterToggle} id="close">
+          <div onClick={filterToggleHandler} id="close">
             <span className="material-icons">close</span>
           </div>
           {prices.map((price, index) => (
@@ -25,7 +31,14 @@ const Filter = ({ filterStatus, filterToggle, onItemSelect }) => {
           {/* custome range input */}
           <h5> Price Range </h5>
           <div className="custom-range">
-            <input onChange={(e) => setRangeValue(e.target.value)} value={rangeValue} type="range" min="0" max="100" id="slider" />
+            <input
+              onChange={(e) => setRangeValue(e.target.value)}
+              value={rangeValue}
+              type="range"
+              min="0"
+              max="100"
+              id="slider"
+            />
             <span id="rangeValue">{rangeValue}</span>
           </div>
           {/* Categories section */}

@@ -3,16 +3,9 @@ import store from "../store-demo-data.json";
 import Filter from "./filter/filter";
 import Products from "./products/products";
 
-const Home = ({productDetailsHandler}) => {
-  const [filterStatus, setFilterStatus] = useState(false);
+const Home = ({ productDetailsHandler }) => {
   const [products, setProducts] = useState([]);
   const [brand, setBrand] = useState();
-
-  // Start burger menu toggle
-  const filterToggle = () => {
-    setFilterStatus(!filterStatus);
-  };
-  // End burger menu toggle
 
   // call the data from json file and save it in State
   useEffect(() => {
@@ -71,15 +64,10 @@ const Home = ({productDetailsHandler}) => {
           </div>
         </section>
         <div className="content-body">
-          <Filter
-            onItemSelect={handleSelect}
-            filterStatus={filterStatus}
-            filterToggle={filterToggle}
-          />
+          <Filter onItemSelect={handleSelect} />
           <Products
             handleSort={handleSort}
             allProducts={fillterd}
-            filterToggle={filterToggle}
             onSort={handleSort}
             productDetailsHandler={productDetailsHandler}
           />

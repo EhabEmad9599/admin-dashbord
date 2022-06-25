@@ -132,3 +132,21 @@ nav {
     display: none;
   }
 }
+
+// start checkout responsive section
+@media (max-width: 992px) { 
+  .checkout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) { 
+  .card {
+    grid-template-columns: 1fr !important;
+    .image {
+      text-align: center;
+      img {
+        width:50% !important;
+      }
+    }
+  }
+}

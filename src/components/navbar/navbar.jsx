@@ -2,34 +2,36 @@ import React, { useEffect, useState } from "react";
 import profile from "../../img/profile.png";
 import avatar from "../../img/avatar.png";
 import avatar2 from "../../img/avatar-2.png";
+import { uiAction } from "../../Redux/Reducer/uiSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ slideStatusHandler }) => {
-  const [userSubMenu, setUserSubMenu] = useState(false);
-  const [NotificationsSubMenu, setNotificationsSubMenu] = useState(false);
   const [darkMood, setDarkMood] = useState(false);
+  const userSubMenu = useSelector((state) => state.ui.userSubMenu);
+  const notificationsSubMenu = useSelector(
+    (state) => state.ui.notificationsSubMenu
+  );
+  const dispatch = useDispatch();
 
   // start toggle user submenu
   const toggleUserSubMenu = () => {
-    setUserSubMenu(!userSubMenu);
-    if (NotificationsSubMenu === true) {
-      return setNotificationsSubMenu(false);
-    } else {
-      return setNotificationsSubMenu(false);
-    }
+    dispatch(uiAction.userSunMenuHandler());
   };
   // start toggle user submenu
 
   // start toggle notification submenu
 
   const showNotifications = () => {
-    setNotificationsSubMenu(!NotificationsSubMenu);
-    if (userSubMenu === true) {
-      return setUserSubMenu(false);
-    } else {
-      return setUserSubMenu(false);
-    }
+    dispatch(uiAction.notificationsHandler());
   };
   // start toggle notification submenu
+
+  // state toggle siderbar section
+  const sidebarHandler = () => {
+    dispatch(uiAction.sidebarMenu());
+  };
+  // End toggle siderbar section
 
   // start toggle dark mode Toggle
 
@@ -66,7 +68,7 @@ const Navbar = ({ slideStatusHandler }) => {
         <ul className="bookmark">
           <li>
             {/* .burger-menu */}
-            <div onClick={slideStatusHandler} id="burger">
+            <div onClick={sidebarHandler} id="burger">
               <div className="line1"></div>
               <div className="line2"></div>
               <div className="line3"></div>
@@ -102,14 +104,16 @@ const Navbar = ({ slideStatusHandler }) => {
             <span className="material-icons">search</span>
           </li>
           <li className="shoping-cart">
-            <span className="material-icons">shopping_cart</span>
+            <Link to="/Checkout" className="material-icons">
+              shopping_cart
+            </Link>
           </li>
           <li onClick={showNotifications} className="alert">
             <span className="material-icons">notifications_none</span>
             <span className="badge">6</span>
             <ul
               className={
-                NotificationsSubMenu ? "drop-down-menu show" : "drop-down-menu"
+                notificationsSubMenu ? "drop-down-menu show" : "drop-down-menu"
               }
             >
               <li>
@@ -209,7 +213,6 @@ const Navbar = ({ slideStatusHandler }) => {
             <img src={profile} alt="profileImg" />
             <ul className={userSubMenu ? "submenu active" : "submenu"}>
               <li>
-                {" "}
                 <span className="material-icons">person</span>Profile
               </li>
               <li>

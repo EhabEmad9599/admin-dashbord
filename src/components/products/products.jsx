@@ -1,18 +1,27 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Pagination from "../common/pagination";
+import { productDetailsAction } from "../../Redux/Reducer/productDetialsSlice";
+import { uiAction } from "../../Redux/Reducer/uiSlice";
+// import Pagination from "../common/pagination";
 
 const Products = ({
-  filterToggle,
   allProducts,
   handleSort,
-  productDetailsHandler,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [pageSize, setPageSize] = useState(4);
+  const dispatch = useDispatch();
 
-  const handlePageChange = (page) => {
-    console.log(page);
+  const filterToggleHandler = () => {
+    dispatch(uiAction.filterMenu());
+  };
+  // const [pageSize, setPageSize] = useState(4);
+
+  // const handlePageChange = (page) => {
+  //   console.log(page);
+  // };
+  const productDetailsHandler = (item) => {
+    dispatch(productDetailsAction.productDetailsHandler({ ...item }));
   };
 
   return (
@@ -21,7 +30,7 @@ const Products = ({
       <section className="ecommerce-header">
         <div className="result-toggler">
           {/*start .burger-menu */}
-          <div onClick={filterToggle} id="burger">
+          <div onClick={filterToggleHandler} id="burger">
             <div className="line1"></div>
             <div className="line2"></div>
             <div className="line3"></div>
@@ -116,11 +125,11 @@ const Products = ({
       {/* start item section */}
 
       {/* start Pagination */}
-      <Pagination
+      {/* <Pagination
         itemsCount={allProducts.length}
         pageSize={pageSize}
         onPageChange={handlePageChange}
-      />
+      /> */}
 
       {/* End Pagination */}
     </article>
