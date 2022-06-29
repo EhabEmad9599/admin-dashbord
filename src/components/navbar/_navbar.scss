@@ -40,9 +40,27 @@ nav {
       cursor: pointer;
     }
     .shoping-cart {
+      position: relative;
+
       a {
         color:var(--pargrahColor);
         text-decoration: none;
+      }
+      .badge {
+        position:absolute;
+        top:-8px;
+        left:10px;
+        width:1.2rem;
+        height:1.2rem;
+        background-color: #ea5455;
+        color:#FFF;
+        padding:5px;
+        border-radius: 50%;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
       }
     }
 

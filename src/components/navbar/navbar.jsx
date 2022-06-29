@@ -6,9 +6,10 @@ import { uiAction } from "../../Redux/Reducer/uiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ slideStatusHandler }) => {
+const Navbar = () => {
   const [darkMood, setDarkMood] = useState(false);
   const userSubMenu = useSelector((state) => state.ui.userSubMenu);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const notificationsSubMenu = useSelector(
     (state) => state.ui.notificationsSubMenu
   );
@@ -107,6 +108,7 @@ const Navbar = ({ slideStatusHandler }) => {
             <Link to="/Checkout" className="material-icons">
               shopping_cart
             </Link>
+            <span className="badge">{totalQuantity}</span>
           </li>
           <li onClick={showNotifications} className="alert">
             <span className="material-icons">notifications_none</span>

@@ -1,5 +1,5 @@
 h1 {
-  color:#FFF;
+  color:var(--headerColor);
   font-size: 1.5rem;
   margin:20px;
 }
@@ -16,6 +16,7 @@ h1 {
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     border-radius: 8px;
+    margin-bottom:1rem;
     .image {
       img {
         width: 100%;
@@ -50,13 +51,21 @@ h1 {
         border:1px solid #404656;
         margin-top:.6rem;
         padding:.3rem;
+        button {
+          background-color: transparent;
+          border:none;
+          color:var(--headerColor);
+          padding:0rem .5rem;
+          cursor: pointer;
+        }
         span {
           width: 100%;
-          color:#d0d2d6;
+          color:var(--headerColor);
           text-align: center;
           font-size: .9rem;
           cursor: pointer;
         }
+
         .num {
           border-left: 1px solid #00000041;
           border-right: 1px solid #00000041;
@@ -104,7 +113,7 @@ h1 {
   }
   // End card section
   // start checkout-options
-  .checkout-options {
+  .checkout-card {
     background-color: var(--section-bg);
     @include box-shadow(14px, 24px, 15px, rgba(34, 41, 47, 0.1));
     padding:1rem;
@@ -121,6 +130,15 @@ h1 {
         justify-content: space-between;
         padding:.5rem 0;
       }
+    }
+    button {
+      background-color: var(--primary-btn-fg);
+      width:100%;
+      border:none;
+      color:#FFF;
+      height:40px;
+      font-size:1rem;
+      border-radius: 7px;
     }
   }
   // End checkout-options

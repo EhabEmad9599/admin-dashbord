@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { productDetailsAction } from "../../Redux/Reducer/productDetialsSlice";
+import { cartAction } from "../../Redux/Reducer/productSlice";
 import { uiAction } from "../../Redux/Reducer/uiSlice";
 // import Pagination from "../common/pagination";
 
-const Products = ({
-  allProducts,
-  handleSort,
-}) => {
+const Products = ({ allProducts, handleSort }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
 
@@ -21,7 +18,7 @@ const Products = ({
   //   console.log(page);
   // };
   const productDetailsHandler = (item) => {
-    dispatch(productDetailsAction.productDetailsHandler({ ...item }));
+    dispatch(cartAction.productDetailsHandler({ ...item }));
   };
 
   return (
@@ -81,7 +78,7 @@ const Products = ({
       <section className="items">
         {allProducts
           .filter((product) => product.name.toLowerCase().includes(searchTerm))
-          .slice(0, 9)
+          .slice(0, 12)
           .map((product) => {
             return (
               <Link
@@ -107,16 +104,6 @@ const Products = ({
                 <div className="item-info">
                   <h5>{product.name}</h5>
                   <p>{product.discription}</p>
-                </div>
-                <div className="item-options">
-                  {/* <a className="wishlist" href="/">
-                    <span className="material-icons bg-hover">favorite</span>
-                    WishList
-                  </a>
-                  <a className="add-to-cart" href="/">
-                    <span className="material-icons">shopping_cart</span>
-                    Add to cart
-                  </a> */}
                 </div>
               </Link>
             );

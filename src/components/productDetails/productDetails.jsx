@@ -1,10 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cartAction } from "../../Redux/Reducer/productSlice";
 
 const ProductDetails = () => {
-  const productDetails = useSelector(
-    (state) => state.productDetails.productDetails
-  );
+  const productDetails = useSelector((state) => state.cart.productDetails);
+  const dispatch = useDispatch();
+
+  const addToCartHandler = (productDetails) => {
+    dispatch(
+      cartAction.addItemToCart({
+        id: productDetails.id,
+        name: productDetails.name,
+        price: productDetails.price,
+        brand: productDetails.brand,
+        img: productDetails.img,
+        quantity: productDetails.quantity,
+      })
+    );
+  };
   return (
     <>
       <article className="product">
@@ -21,7 +34,12 @@ const ProductDetails = () => {
             Available | {productDetails.available ? "In stock" : "Out of stock"}
           </h5>
           <p>{productDetails.discription}</p>
-          <button className="add-to-cart">Add to cart</button>
+          <button
+            onClick={() => addToCartHandler(productDetails)}
+            className="add-to-cart"
+          >
+            Add to cart
+          </button>
           <button className="wishlist">WishList</button>
         </section>
       </article>
