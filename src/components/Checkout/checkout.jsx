@@ -69,7 +69,7 @@ const Checkout = () => {
               </li>
               <hr />
               <li>
-                Total <span>$ {totalPrice} </span>
+                Total <span>$ {totalPrice.toFixed(2)} </span>
               </li>
             </ul>
             <button>Place order</button>

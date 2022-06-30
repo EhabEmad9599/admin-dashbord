@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/navbar";
 import { Routes, Route } from "react-router-dom";
 import ProductDetails from "./components/productDetails/productDetails";
 import Checkout from "./components/Checkout/checkout";
+import PageNotFound from "./components/pageNotFound/pageNotFound";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/productDetails/:id" element={<ProductDetails />} />
           <Route path="/Checkout" element={<Checkout />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </section>
 
