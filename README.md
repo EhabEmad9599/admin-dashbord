@@ -5,16 +5,16 @@
 - Search Products by Title Name 🧐
 - Filter Products by Category
 - Sort Products by Price
-- show product Detials 🧐
+- Product items with their own pages for product details
+- Shopping cart (add/update/remove items)
 - Choose between light and dark mode ☀️🌘
 - Maintain the selected theme after refreshing the browser 
 - View the optimal layout depending on your device's screen size 🖥💻📱
 
 ### Build with
-- React JS
-- React Router
-- Redux Toolkit
-- Sass
+- React & React Router for creating reusable components and dynamic routing
+- Redux Toolkit for state management and persistance
+- Sass for styling
 
 
 # Installing
