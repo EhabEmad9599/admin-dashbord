@@ -13,7 +13,7 @@
 
 ### Build with
 - React & React Router for creating reusable components and dynamic routing
-- Redux Toolkit for state management and persistance
+- Redux Toolkit for state management
 - Sass for styling
 
 
